@@ -10,8 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class MySimpleLinkedBlockingQueue<T> implements BlockingQueue<T>, Serializable {
 
 	/**
-	 * Простая тестовая реализация блокирующей очереди основаной на двусвязном
-	 * списке
+	 * РјРѕСЏ РїСЂРѕСЃС‚Р°СЏ СЂРµР°Р»РёР·Р°С†РёСЏ Р±Р»РѕРєРёСЂСѓСЋС‰РµР№ РѕС‡РµСЂРµРґРё РЅР° РґРІСѓСЃРІСЏР·РЅРѕРј СЃРїРёСЃРєРµ
 	 */
 	private static final long serialVersionUID = 1775340375351081884L;
 
@@ -59,8 +58,8 @@ public class MySimpleLinkedBlockingQueue<T> implements BlockingQueue<T>, Seriali
 		return retrieveItems();
 	}
 
-	private synchronized T retrieveItems() { // Извлекает из головы элемент
-												// (общий метод для poll(),
+	private synchronized T retrieveItems() { // РѕР±С‰РёР№ РјРµС‚РѕРґ РґР»СЏ
+												// poll(),
 												// remove(), take())
 		Node retrievable = firstNode;
 		firstNode = firstNode.nextNode;
@@ -80,7 +79,7 @@ public class MySimpleLinkedBlockingQueue<T> implements BlockingQueue<T>, Seriali
 
 	@Override
 	public boolean addAll(Collection<? extends T> arg0) {
-		// метод не поддерживается
+		// РјРµС‚РѕРґ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ
 		return false;
 	}
 
@@ -95,7 +94,7 @@ public class MySimpleLinkedBlockingQueue<T> implements BlockingQueue<T>, Seriali
 
 	@Override
 	public boolean containsAll(Collection<?> arg0) {
-		// метод не поддерживается
+		// РјРµС‚РѕРґ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ
 		return false;
 	}
 
@@ -128,14 +127,14 @@ public class MySimpleLinkedBlockingQueue<T> implements BlockingQueue<T>, Seriali
 	@Override
 	public boolean removeAll(Collection<?> arg0) {
 		// TODO Auto-generated method stub
-		// метод не поддерживается
+		// РјРµС‚РѕРґ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ
 		return false;
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> arg0) {
 		// TODO Auto-generated method stub
-		// метод не поддерживается
+		// РјРµС‚РѕРґ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ
 		return false;
 	}
 
@@ -185,19 +184,19 @@ public class MySimpleLinkedBlockingQueue<T> implements BlockingQueue<T>, Seriali
 	@Override
 	public int drainTo(Collection<? super T> arg0) {
 		// TODO Auto-generated method stub
-		// метод не поддерживается
+		// РјРµС‚РѕРґ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ
 		return 0;
 	}
 
 	@Override
 	public int drainTo(Collection<? super T> arg0, int arg1) {
 		// TODO Auto-generated method stub
-		// метод не поддерживается
+		// РјРµС‚РѕРґ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ
 		return 0;
 	}
 
 	@Override
-	public boolean offer(T arg0) { // добовляем в хвост
+	public boolean offer(T arg0) {
 		if (size == capacity)
 			return false;
 		addToQueue(arg0);
@@ -207,14 +206,13 @@ public class MySimpleLinkedBlockingQueue<T> implements BlockingQueue<T>, Seriali
 	@Override
 	public boolean offer(T arg0, long arg1, TimeUnit arg2) throws InterruptedException {
 		// TODO Auto-generated method stub
-		// метод не поддерживается
+		// РјРµС‚РѕРґ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ
 		return false;
 	}
 
 	@Override
 	public T poll(long arg0, TimeUnit arg1) throws InterruptedException {
-
-		// метод не поддерживается
+		// РјРµС‚РѕРґ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ
 		return null;
 	}
 
@@ -227,9 +225,8 @@ public class MySimpleLinkedBlockingQueue<T> implements BlockingQueue<T>, Seriali
 		addToQueue(arg0);
 	}
 
-	private synchronized void addToQueue(Object object) { // добавляем в конец
-															// очереди, общий
-															// метод для put(),
+	private synchronized void addToQueue(Object object) { // РѕР±С‰РёР№ РјРµС‚РѕРґ РґР»СЏ
+															// put(),
 															// add(), offer()
 		Node addNode = new Node(object);
 		if (size == 0) {

@@ -27,7 +27,7 @@ public class Consumer implements Runnable {
 
 	void consume(Object object) {
 		String form = new SimpleDateFormat("ss S").format(new Date());
-		System.out.println("поток id " + Thread.currentThread().getId() + " \t\"" + object + "\"\tвремя = " + form);
+		System.out.println("РїРѕС‚РѕРє  id " + Thread.currentThread().getId() + " \t\"" + object + "\"\t РІСЂРµРјСЏ = " + form);
 
 	}
 }
